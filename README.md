@@ -1,7 +1,7 @@
 # Movie Mania
 
-### GitHub Link of This Project:
+### GitHub Link of This Project
 Github Link :  https://github.com/Fahimsakib1/Movie-Mania-Task-QuadB-Tech
 
-### Netlify Live Website Link:
+### Netlify Live Website Link
 Live Site Link: 
