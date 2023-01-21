@@ -27,7 +27,7 @@ const Footer = () => {
                 </span>
                 </h1>
 
-                <div className="divider w-3/4 mx-auto">Never Underestimate Yourself. You Are The Best</div>
+                <div className="divider w-3/4 mx-auto">Be Happy And Keep Everyone Happy</div>
 
                 <div className='flex justify-center items-center gap-x-4 -mt-2'>
 
