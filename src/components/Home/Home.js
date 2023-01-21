@@ -6,10 +6,13 @@ import Spinner from '../Spinner/Spinner';
 import AllShowsCard from './AllShowsCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from '../Hooks/useTitle';
 
 
 
 const Home = () => {
+
+    useTitle('All Movies');
 
     useEffect(() => {
         AOS.init({
@@ -36,8 +39,6 @@ const Home = () => {
             <Spinner></Spinner>
         </div>
     }
-
-
 
 
     return (

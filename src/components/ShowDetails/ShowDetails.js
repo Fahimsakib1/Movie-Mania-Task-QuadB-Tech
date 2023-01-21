@@ -4,10 +4,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import BookingModal from '../BookingModal/BookingModal';
 import { BsStarFill } from 'react-icons/bs';
+import useTitle from '../Hooks/useTitle';
 
 
 const ShowDetails = () => {
 
+    useTitle('Movie Details')
+    
     const showDetails = useLoaderData();
     const { id, language, name, rating, summary, image, averageRuntime, status, genres
     } = showDetails
@@ -37,7 +40,7 @@ const ShowDetails = () => {
                         </div>
 
                         <div className='px-10 py-2 bg-gradient-to-r from-violet-900 to-pink-900 text-white rounded-lg text-lg font-bold tracking-wide animation lg:mb-0 mb-2' data-aos="fade-left">
-                            {genres}
+                        {genres[0]} {genres[1]} {genres[2]}
                         </div>
 
                         <div>
