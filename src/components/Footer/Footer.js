@@ -5,12 +5,10 @@ import { BsFacebook, BsLinkedin, BsInstagram, BsGithub } from 'react-icons/bs';
 import { Typewriter } from 'react-simple-typewriter';
 
 
-
-
 const Footer = () => {
     return (
-        <div className=' mt-64  bg-gray-900 text-white'>
-            <footer className="pb-6 pt-8">
+        <div className=' bg-gray-900 text-white mt-96'>
+            <footer className="pb-6 pt-8 ">
                 <h1 className='text-lg text-center'>Copyright © 2023 | All Rights Reserved By <br></br> <span className='text-3xl font-bold'>
 
                     <Typewriter

@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import BookingModal from '../BookingModal/BookingModal';
 import { BsStarFill } from 'react-icons/bs';
 import useTitle from '../Hooks/useTitle';
+import noImageFound from '../../image/image-not-found.jpg';
 
 
 const ShowDetails = () => {
@@ -12,8 +13,7 @@ const ShowDetails = () => {
     useTitle('Movie Details')
     
     const showDetails = useLoaderData();
-    const { id, language, name, rating, summary, image, averageRuntime, status, genres
-    } = showDetails
+    const { name, rating, summary, image, status, genres} = showDetails
 
     const [bookShow, setBookShow] = useState(null);
 
@@ -27,29 +27,29 @@ const ShowDetails = () => {
 
     return (
         <div>
-            <div className='flex justify-center items-center gap-x-8 mt-8 mb-12 lg:flex-row md:flex-col sm:flex-col flex-col lg:mt-28 md:mt-20'>
-                <figure><img src={image.original} className=' w-[350px] sm:w-[350px] md:w-[700px] lg:w-[700px] h-[470px]  rounded-xl mb-6 animation' data-aos="zoom-in" alt="Show" /></figure>
+            <div className='flex justify-center items-center gap-x-8 mt-8 mb-12 lg:flex-row md:flex-col sm:flex-col flex-col lg:mt-16 md:mt-20'>
+                <figure><img src={image ? image.original : noImageFound } className=' w-[350px] sm:w-[350px] md:w-[700px] lg:w-[700px] h-[500px]  rounded-xl mb-6 animation' data-aos="zoom-in" alt="Show" /></figure>
 
                 <div className=' md:w-[590px] sm:w-[330px] w-[330px]'>
-                    <h2 className="text-center text-3xl mb-2  py-1 font-semibold rounded-lg font-serif  uppercase tracking-wide">{name}</h2>
+                    <h2 className="text-center text-3xl mb-2  py-1 font-semibold rounded-lg font-serif  uppercase tracking-wide text-blue-600">{name ? name  : 'No Name Found'}</h2>
 
-                    <div className='flex justify-evenly items-center my-4 gap-x-3 md:flex-row sm:flex-col flex-col'>
+                    <div className='flex justify-evenly items-center my-4 gap-x-3 md:flex-row sm:flex-col flex-col flex-wrap'>
 
-                        <div className={`${status === 'Running' ? 'bg-green-700' : 'bg-red-700'} px-10 py-2 text-white rounded-lg text-lg font-bold tracking-wide animation lg:mb-0 mb-2`} data-aos="fade-left">
-                            {status}
+                        <div className={`${status === 'Running' ? 'bg-green-700' : 'bg-red-700'} px-10 py-2 text-white rounded-lg text-lg font-bold tracking-wide animation lg:mb-0 my-2 `} data-aos="fade-left">
+                            Status: {status}
                         </div>
 
-                        <div className='px-10 py-2 bg-gradient-to-r from-violet-900 to-pink-900 text-white rounded-lg text-lg font-bold tracking-wide animation lg:mb-0 mb-2' data-aos="fade-left">
-                        {genres[0]} {genres[1]} {genres[2]}
+                        <div className='px-10 py-2 bg-gradient-to-r from-violet-900 to-pink-900 text-white rounded-lg text-lg font-bold tracking-wide animation lg:mb-0 my-2' data-aos="fade-left">
+                        Genre: {genres[0]} {genres[1]} {genres[2]}
                         </div>
 
                         <div>
                             {
                                 rating.average &&
-                                <div className='flex justify-center items-center text-xl bg-blue-900 px-10 py-2  rounded-lg text-white animation lg:mb-0 mb-2' data-aos="fade-right">
+                                <div className='flex justify-center items-center text-xl bg-blue-900 px-10 py-2  rounded-lg text-white animation lg:mb-0 my-2' data-aos="fade-right">
                                     <BsStarFill className=' text-3xl mr-2 text-amber-500'>
                                     </BsStarFill>
-                                    <span className=' font-bold'>{rating.average}</span>
+                                    <span className=' font-bold'>{rating && rating.average}</span>
                                 </div>
                             }
                         </div>
